@@ -110,15 +110,10 @@
         .story-image {
             width: 100%;
             height: auto;
-            min-height: 200px;
+            min-height: 400px;
             background: linear-gradient(45deg, #667eea, #764ba2);
             border-radius: 15px;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 16px;
+            margin: 30px 0;
             position: relative;
             overflow: hidden;
         }
@@ -136,6 +131,8 @@
             bottom: 0;
             background: url('./writer-working.jpg') center/contain no-repeat;
             background-size: contain;
+            width: 100%;
+            height: 100%;
         }
 
         .story-image.transformation {
@@ -358,7 +355,8 @@
             }
 
             .story-image {
-                min-height: 150px;
+                min-height: 300px;
+                margin: 20px 0;
             }
 
             .goals-list,
@@ -373,9 +371,8 @@
                 font-size: 1.8em;
             }
 
-            .hero-image,
             .story-image {
-                height: 150px;
+                min-height: 120px;
             }
         }
     </style>
@@ -400,9 +397,7 @@
                     
                     <p class="paragraph">這位學員的故事，讓我印象深刻——</p>
 
-                    <div class="story-image writer">
-                        <div class="image-placeholder">文字工作者日常：在電腦前寫作的溫馨畫面</div>
-                    </div>
+                    <div class="story-image writer"></div>
 
                     <p class="paragraph">她是一位每天寫字、說故事給孩子聽的文字工作者，也是個媽媽。</p>
 
