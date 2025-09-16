@@ -109,7 +109,8 @@
 
         .story-image {
             width: 100%;
-            height: 250px;
+            height: auto;
+            min-height: 200px;
             background: linear-gradient(45deg, #667eea, #764ba2);
             border-radius: 15px;
             margin: 20px 0;
@@ -133,8 +134,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('./writer-working.jpg') center/cover;
-            opacity: 0.8;
+            background: url('./writer-working.jpg') center/contain no-repeat;
+            background-size: contain;
         }
 
         .story-image.transformation {
@@ -356,9 +357,8 @@
                 font-size: 1em;
             }
 
-            .hero-image,
             .story-image {
-                height: 200px;
+                min-height: 150px;
             }
 
             .goals-list,
