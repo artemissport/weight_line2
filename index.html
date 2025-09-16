@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>花10萬打瘦瘦針，停藥後復胖...這真的是你要的瘦嗎？</title>
+    <title>老公說我這樣剛剛好，我差點就信了！- 健康瘦身故事</title>
     <style>
         * {
             margin: 0;
@@ -12,21 +12,25 @@
         }
 
         body {
-            font-family: 'Microsoft JhengHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            color: #2d3748;
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            overflow-x: hidden;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 20px;
+        }
+
+        .article {
             background: white;
+            border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-radius: 16px;
             overflow: hidden;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         @keyframes fadeInUp {
@@ -40,579 +44,454 @@
             }
         }
 
-        .hero-section {
-            position: relative;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 80px 40px 60px;
-            text-align: center;
+            font-size: 18px;
+            position: relative;
             overflow: hidden;
+            display: none;
         }
 
-        .hero-section::before {
+        .hero-image::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./images/hero-image.jpg') center/cover;
+            opacity: 0.8;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .hero-text {
             position: relative;
-            z-index: 1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-
-        .main-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-            margin: 0;
-            border-radius: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
 
         .content {
-            padding: 60px 40px;
+            padding: 40px;
         }
 
-        .section {
-            margin-bottom: 50px;
-            padding: 30px;
-            background: #f8fafc;
-            border-radius: 12px;
-            border-left: 5px solid #667eea;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+        .title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
         }
 
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .subtitle {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 40px;
+            font-style: italic;
         }
 
-        .section-title {
-            font-size: 1.8rem;
-            color: #2d3748;
-            margin-bottom: 25px;
-            font-weight: bold;
+        .story-section {
+            margin: 40px 0;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 15px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
             position: relative;
+            overflow: hidden;
         }
 
-        .section-title::after {
+        .story-image.writer {
+            background: url('./images/writer-working.jpg') center/cover;
+        }
+
+        .story-image.transformation {
+            background: url('./images/before-after.jpg') center/cover;
+        }
+
+        .story-image.healthy-lifestyle {
+            background: url('./images/healthy-lifestyle.jpg') center/cover;
+        }
+
+        .story-image.success {
+            background: url('./images/success-celebration.jpg') center/cover;
+        }
+
+        .story-image::before {
             content: '';
             position: absolute;
-            bottom: -5px;
+            top: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
         }
 
-        .quote-box {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 25px;
-            border-radius: 12px;
-            font-style: italic;
-            font-size: 1.1rem;
-            border-left: 5px solid #f6ad55;
-            margin: 25px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 30px 0;
-        }
-
-        .comparison-card {
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .comparison-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .card-negative {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            border: 2px solid #fed7d7;
-        }
-
-        .card-positive {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            border: 2px solid #c6f6d5;
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .card-list {
-            list-style: none;
-        }
-
-        .card-list li {
-            padding: 8px 0;
-            padding-left: 20px;
+        .image-placeholder {
             position: relative;
-        }
-
-        .card-negative .card-list li::before {
-            content: '✗';
-            position: absolute;
-            left: 0;
-            color: #e53e3e;
-            font-weight: bold;
-        }
-
-        .card-positive .card-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #38a169;
-            font-weight: bold;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin: 20px 0;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
+            z-index: 2;
             text-align: center;
-            margin-top: 50px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
         }
 
-        .cta-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: bold;
+        .paragraph {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            text-align: justify;
         }
 
         .highlight {
             background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-weight: bold;
-            color: #2d3748;
-        }
-
-        .key-points {
-            background: #f7fafc;
-            padding: 30px;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 15px;
             margin: 30px 0;
-            border: 2px dashed #cbd5e0;
+            border-left: 5px solid #ff6b6b;
+            font-weight: 500;
         }
 
-        .key-points h3 {
-            color: #2d3748;
-            margin-bottom: 20px;
+        .quote {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #e74c3c;
             text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #e74c3c;
+            background: #fdf2f2;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .goals-list {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .goals-list h3 {
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .goal-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .goal-item::before {
+            content: '✨';
+            margin-right: 15px;
+            font-size: 1.3em;
+        }
+
+        .results-list {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .results-list h3 {
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .result-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .result-item::before {
+            content: '•';
+            margin-right: 15px;
+            font-size: 1.5em;
+            color: #ffd700;
+        }
+
+        .final-list {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            color: #8b4513;
+        }
+
+        .final-list h3 {
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+            color: #d2691e;
+        }
+
+        .final-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        .final-item::before {
+            content: '•';
+            margin-right: 15px;
+            font-size: 1.5em;
+            color: #ff6b6b;
+        }
+
+        .cta {
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.3);
         }
 
         .floating-elements {
             position: fixed;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: -1;
         }
 
-        .floating-circle {
+        .floating-element {
             position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 107, 107, 0.1);
             border-radius: 50%;
-            background: rgba(102, 126, 234, 0.1);
             animation: float 6s ease-in-out infinite;
         }
 
-        .floating-circle:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
+        .floating-element:nth-child(1) {
+            top: 10%;
             left: 10%;
             animation-delay: 0s;
         }
 
-        .floating-circle:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            right: 15%;
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 10%;
             animation-delay: 2s;
         }
 
-        .floating-circle:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            top: 40%;
-            left: 80%;
+        .floating-element:nth-child(3) {
+            bottom: 10%;
+            left: 20%;
             animation-delay: 4s;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         @media (max-width: 768px) {
             .container {
-                margin: 0;
-                border-radius: 0;
+                padding: 10px;
             }
 
-            .hero-title {
-                font-size: 1.8rem;
+            .content {
+                padding: 20px;
             }
 
-            .content, .hero-section, .cta-section {
-                padding: 40px 20px;
+            .title {
+                font-size: 2em;
             }
 
-            .comparison-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .subtitle {
+                font-size: 1.1em;
             }
 
-            .section {
+            .paragraph {
+                font-size: 1em;
+            }
+
+            .hero-image,
+            .story-image {
+                height: 200px;
+            }
+
+            .goals-list,
+            .results-list,
+            .final-list {
                 padding: 20px;
             }
         }
 
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(102, 126, 234, 0.2);
-            z-index: 1000;
-        }
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.8em;
+            }
 
-        .scroll-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            width: 0%;
-            transition: width 0.1s ease;
+            .hero-image,
+            .story-image {
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="floating-elements">
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-    </div>
-
-    <div class="scroll-indicator">
-        <div class="scroll-progress" id="scrollProgress"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
     </div>
 
     <div class="container">
-        <div class="hero-section">
-            <h1 class="hero-title">花10萬打瘦瘦針</h1>
-            <p class="hero-subtitle">停藥後復胖...這真的是你要的瘦嗎？</p>
-        </div>
+        <article class="article">
 
-        <!-- 主圖片區域 - 使用您的圖片網址 -->
-        <div style="padding: 0; margin: 0;">
-            <img src="https://meee.com.tw/a2ZfGwL" alt="花10萬打瘦瘦針停藥後復胖" class="main-image" 
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-                 onload="this.nextElementSibling.style.display='none';">
-            <div style="display: none; width: 100%; height: 500px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <div style="text-align: center; padding: 40px;">
-                    <h3 style="color: #dc3545; margin-bottom: 20px; font-size: 1.5rem;">圖片載入中...</h3>
-                    <p style="color: #6c757d; margin-bottom: 15px;">如果圖片無法顯示，請檢查：</p>
-                    <ul style="color: #6c757d; text-align: left; max-width: 300px;">
-                        <li>網路連線狀態</li>
-                        <li>圖片連結是否有效</li>
-                        <li>瀏覽器是否封鎖外部圖片</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <div class="content">
-            <div class="section">
-                <h2 class="section-title">一位媽媽的無奈分享</h2>
-                <div class="quote-box">
-                    「花了10萬打瘦瘦針，3個月瘦了8公斤，當時覺得終於找到救星了。但停藥半年後，體重不只全部回來，還多了2公斤...現在看著鏡子裡的自己，覺得比以前更胖、更絕望。最可怕的是，我發現自己已經離不開這個藥了，一想到要停藥就恐慌。」
-                </div>
-                <p>這讓我想問：<span class="highlight">這真的是你要的瘦嗎？</span></p>
-                <p>如果瘦身的代價是停藥後更嚴重的復胖、每個月1萬6的經濟壓力、還有對藥物的心理依賴...這樣的瘦，真的值得嗎？</p>
-            </div>
+            <div class="content">
+                <h1 class="title">「老公說我這樣剛剛好，我差點就信了！」</h1>
+                <p class="subtitle">有時候我們不是缺乏鼓勵，而是太會自我催眠。</p>
 
-            <div class="section">
-                <h2 class="section-title">我完全理解你的心情</h2>
-                <p>我知道，選擇瘦瘦針的你，一定經歷過太多次的減肥失敗。</p>
-                
-                <p><strong>也許你是那個已經節制飲食卻依然瘦不下來的人。</strong>就像我們的學員雅文曾經說過：「以前我覺得自己已經吃的很節制，最愛喝的珍奶一個月只限制自己喝1杯...但是但是！這樣體重也沒變瘦！」你是不是也有同樣的困惑？明明已經很努力控制了，為什麼體重就是不動？</p>
+                <div class="story-section">
+                    <p class="paragraph">你是不是也曾經被身邊的人說「妳這樣很好啊」，然後就真的放棄了改變？</p>
+                    
+                    <p class="paragraph">這位學員的故事，讓我印象深刻——</p>
 
-                <p><strong>也許你是那個工作壓力大、生活忙碌的職場人，</strong>每天被工作追著跑，根本沒時間好好照顧自己。看到瘦瘦針的廣告，心想：「終於有一個不用改變生活方式就能瘦的方法了！」</p>
-
-                <p><strong>也許你是那個已經嘗試過無數次減肥的「資深減肥者」，</strong>從斷食到代餐，從生酮到運動，每一種方法都試過，卻總是在復胖的循環中打轉。當聽到瘦瘦針時，你想：「這次一定要成功！」</p>
-
-                <p>我完全理解這種心情。當你已經嘗試過所有方法都失敗時，瘦瘦針看起來就像是最後的救命稻草。</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">殘酷的真相</h2>
-                <p>但是，親愛的，我必須告訴你一個殘酷的真相：<span class="highlight">依賴外物的瘦身，永遠不會是真正的解決方案。</span></p>
-                
-                <p>真正的瘦身，不是靠外力強迫身體改變，而是喚醒身體本來就有的智慧。</p>
-
-                <div class="key-points">
-                    <h3>什麼是身體的智慧？</h3>
-                    <p>就是當你的身體營養充足、代謝正常時，它會自然地告訴你什麼該吃、什麼不該吃、什麼時候該停止進食。</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">ABC瘦身法 vs 瘦瘦針</h2>
-                <div class="comparison-grid">
-                    <div class="comparison-card card-negative">
-                        <h3 class="card-title">瘦瘦針 - 強迫身體不想吃</h3>
-                        <ul class="card-list">
-                            <li>透過藥物抑制食慾中樞</li>
-                            <li>身體被迫減少進食量</li>
-                            <li>停藥後身體反彈更嚴重</li>
-                            <li>沒有學會正確的飲食方式</li>
-                            <li>每月1萬6的經濟壓力</li>
-                            <li>對藥物產生心理依賴</li>
-                        </ul>
+                    <div class="story-image writer">
+                        <div class="image-placeholder">文字工作者日常：在電腦前寫作的溫馨畫面</div>
                     </div>
 
-                    <div class="comparison-card card-positive">
-                        <h3 class="card-title">ABC瘦身法 - 身體自然不想吃不健康食物</h3>
-                        <ul class="card-list">
-                            <li>透過正確營養讓身體滿足</li>
-                            <li>身體自然選擇健康食物</li>
-                            <li>建立可持續一輩子的習慣</li>
-                            <li>學會傾聽身體的聲音</li>
-                            <li>找回身體的自主權</li>
-                            <li>全面的健康改善</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                    <p class="paragraph">她是一位每天寫字、說故事給孩子聽的文字工作者，也是個媽媽。</p>
 
-            <div class="section">
-                <h2 class="section-title">學員真實經驗分享</h2>
-                
-                <div class="testimonial">
-                    <div class="testimonial-author">雅文的轉變</div>
-                    <p>「跟著營養師調整飲食以後，早餐可以吃我喜歡的吐司、飯糰，也試著學習吃好的澱粉。」她從節制飲食到建立生活方式的轉變，讓她終於擺脫了反覆減肥失敗的痛苦。</p>
-                </div>
+                    <p class="paragraph">曾經，她也瘦過。那是在生完孩子後的一段短暫時光，但隨著年復一年的熬夜趕稿、深夜肚子餓吃宵夜、長時間坐著不運動，體重一去不回頭。</p>
 
-                <div class="testimonial">
-                    <div class="testimonial-author">美玲的發現</div>
-                    <p>「最大的改變就是我不再把自己吃的飽飽的，炸物我很少吃，原本飲食都要辣辣辣的，現在清淡很多。身體也回饋我，胃不再那麼脹氣不舒服了。」注意到了嗎？她的改變不是被迫的，而是身體自然的回饋。</p>
-                </div>
+                    <p class="paragraph">衣櫃裡的衣服越買越寬鬆，心裡的標準卻越來越模糊。</p>
 
-                <div class="testimonial">
-                    <div class="testimonial-author">淑華的體悟</div>
-                    <p>「參加前每次員工餐看到炸柳葉魚我一定會選（柳葉魚控）！參加後，一開始看到炸柳葉魚會含淚選其他主食，現在看到炸柳葉魚已經不那麼傷心了！飲食的改變真的是慢慢養成習慣就變自然。」</p>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-author">志偉的轉變</div>
-                    <p>「我現在看到甜食會先問問自己，是真的想吃還是嘴饞而已。」這種有意識的選擇，就是找回身體自主權後的表現。</p>
-                </div>
-
-                <p>你看，這些改變都有一個共同點：不是被迫的，而是自然的；不是痛苦的，而是快樂的；不是短期的，而是可持續的。</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">你要瘦一陣子，還是瘦一輩子？</h2>
-                
-                <div class="comparison-grid">
-                    <div class="comparison-card card-negative">
-                        <h3 class="card-title">瘦瘦針 - 瘦一陣子</h3>
-                        <ul class="card-list">
-                            <li>依賴藥物的短期效果</li>
-                            <li>停藥後的復胖恐懼</li>
-                            <li>每個月1萬6的持續經濟壓力</li>
-                            <li>對身體長期影響的未知風險</li>
-                            <li>沒有學會真正的健康生活方式</li>
-                            <li>心理上對藥物的依賴</li>
-                        </ul>
+                    <div class="highlight">
+                        <p>最讓她困擾的是，老公總是溫柔地說：「我覺得你這樣剛剛好啊～」</p>
                     </div>
 
-                    <div class="comparison-card card-positive">
-                        <h3 class="card-title">ABC瘦身法 - 瘦一輩子</h3>
-                        <ul class="card-list">
-                            <li>建立正確的飲食習慣</li>
-                            <li>喚醒身體的自然調節能力</li>
-                            <li>全面的健康改善</li>
-                            <li>可持續的生活方式</li>
-                            <li>真正找回身體的自主權</li>
-                            <li>心理上的自信和快樂</li>
-                        </ul>
+                    <p class="paragraph">這種溫柔卻有點毒的糖衣話術，讓她一度完全放棄改變。</p>
+
+                    <div class="quote">「也許我真的不用瘦回去了吧？反正老公也不介意…」</div>
+
+                    <p class="paragraph">但她心裡知道，這不是她想要的自己。</p>
+
+                    <p class="paragraph">每次照鏡子，每次穿衣服，每次看到以前的照片，心裡都有個聲音在說：「這真的是我嗎？」</p>
+
+                    <p class="paragraph">她也不是沒試過減肥。</p>
+
+                    <p class="paragraph">節食、代餐、168斷食，甚至還試過那種「一天只吃一餐」的極端方法。</p>
+
+                    <p class="paragraph">每次都是餓到頭昏眼花，脾氣暴躁，工作效率變差，最後撐不住就暴食，體重反彈得比之前更重。</p>
+
+                    <div class="quote">「為什麼減肥一定要這麼痛苦？為什麼我總是失敗？」</div>
+
+                    <p class="paragraph">直到有一天，她突然人間清醒——</p>
+
+                    <div class="highlight">
+                        <p><strong>「不是老公覺得好就好，我也要自己覺得好才行！」</strong></p>
+                    </div>
+
+                    <p class="paragraph">那天，她對自己許了一個願望：</p>
+
+                    <div class="goals-list">
+                        <h3>她的目標</h3>
+                        <div class="goal-item">要健康瘦，不要痛苦瘦</div>
+                        <div class="goal-item">體脂降到30%以下</div>
+                        <div class="goal-item">把高血壓趕出人生！</div>
+                    </div>
+
+
+
+                    <p class="paragraph">很快，她就來到了我們的ABC瘦身法減重班。</p>
+
+                    <p class="paragraph">從第一天起，她就展現了「說到就做到」的行動力。</p>
+
+
+
+                    <p class="paragraph">她說她第一次感覺到，原來減重不是一場孤軍奮戰的痛苦折磨，而是一場可以走得久、撐得住的快樂旅程。</p>
+
+                    <p class="paragraph"><strong>3個月後的她：</strong></p>
+
+                    <div class="results-list">
+                        <h3>驚人的成果</h3>
+                        <div class="result-item">體重從80公斤降到60公斤，瘦了20公斤</div>
+                        <div class="result-item">體脂肪從35~37%降到29%，成功達標</div>
+                        <div class="result-item">血壓從高血壓恢復到正常範圍</div>
+                        <div class="result-item">最重要的是，她每天都吃得很飽，很開心</div>
+                    </div>
+
+
+
+                    <div class="quote">「我終於又可以穿回以前的短裙了！那種感覺真的太爽了！」</div>
+
+                    <p class="paragraph">更讓她驚喜的是，老公現在會主動說：「哇，妳變得好漂亮！」</p>
+
+                    <p class="paragraph">不是敷衍的「妳這樣就很好」，而是發自內心的讚美。</p>
+
+                    <div class="highlight">
+                        <p>我常常跟學員說：「瘦是健康的附加價值，當我們健康後，身體自然就會瘦回平衡的狀態。」</p>
+                    </div>
+
+                    <p class="paragraph">更重要的是，我們要為自己而瘦，不是為了別人的眼光。</p>
+
+                    <p class="paragraph">再多的讚美，也比不上穿回短裙時那種發自內心的爽感。</p>
+
+                    <p class="paragraph">再多的安慰，也比不上照鏡子時看到理想中的自己那種成就感。</p>
+
+                    <p class="paragraph">我們要的不只是「方法」，更需要的是真正的陪伴和支持。</p>
+
+                    <p class="paragraph">在減重的路上，你不是一個人在戰鬥。</p>
+
+                    <p class="paragraph">如果你也曾經：</p>
+
+                    <div class="final-list">
+                        <h3>你是否也有這些經歷？</h3>
+                        <div class="final-item">穿上越來越寬鬆的衣服安慰自己</div>
+                        <div class="final-item">用「家人愛我就好」來麻痺自己</div>
+                        <div class="final-item">試過很多痛苦的減肥方法都失敗了</div>
+                        <div class="final-item">想要健康瘦身，但不知道正確的方法</div>
+                    </div>
+
+                    <div class="cta">
+                        那我想告訴你：別再等了，你需要的，只是一個正確的開始。
                     </div>
                 </div>
             </div>
-
-            <div class="section">
-                <h2 class="section-title">我們的理念</h2>
-                <div class="key-points">
-                    <h3>瘦是健康的附加價值，不是目標本身</h3>
-                    <p>當你的身體健康了，新陳代謝正常了，消化系統改善了，睡眠品質提升了...瘦身只是這個過程中自然發生的美好結果。</p>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-author">慧君的改善</div>
-                    <p>「晚上睡眠品質稍微改善，半夜還是會起床上廁所，但馬上能入睡，不像以前要到4點多才睡著。」健康的改善是全方位的。</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">給你的承諾</h2>
-                <p>我們不會給你快速瘦身的虛假承諾，但我們會給你：</p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
-                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
-                        專業的營養指導
-                    </li>
-                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
-                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
-                        溫暖的陪伴支持
-                    </li>
-                    <li style="padding: 10px 0; padding-left: 30px; position: relative;">
-                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
-                        一群志同道合的夥伴
-                    </li>
-                </ul>
-
-                <p>我們會教你如何在忙碌的生活中做對身體最好的選擇，如何在享受美食的同時保持健康，如何建立一個可以維持一輩子的生活方式。</p>
-
-                <p>最重要的是，我們會陪伴你度過改變過程中的每一個挑戰，讓你知道：<span class="highlight">你不是一個人在努力。</span></p>
-            </div>
-
-            <div class="key-points">
-                <h3>三個重要提醒</h3>
-                <p><strong>記住：真正的瘦身，不是對抗身體，而是與身體和諧共處。</strong></p>
-                <p><strong>記住：真正的健康，不是依賴外物，而是喚醒內在的智慧。</strong></p>
-                <p><strong>記住：真正的美麗，不是數字的完美，而是由內而外的光彩。</strong></p>
-            </div>
-        </div>
-
-        <div class="cta-section">
-            <h2 class="cta-title">讓我們一起，找回身體的自主權</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">
-                因為，一個能夠傾聽身體聲音、擁有自主選擇權的身體，才是真正健康美麗的身體。
-            </p>
-            <p style="font-size: 1.1rem; opacity: 0.9;">
-                記住，任何時候開始都不嫌遲。重點不是速度，重點是開始。
-            </p>
-            <br>
-            <p style="font-size: 1.3rem; font-weight: bold;">
-                你值得擁有一個健康、快樂、充滿活力的人生。<br>
-                而這一切，都從學會愛護自己的身體開始。
-            </p>
-        </div>
+        </article>
     </div>
-
-    <script>
-        // 滾動進度條
-        window.addEventListener('scroll', function() {
-            const scrollProgress = document.getElementById('scrollProgress');
-            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollCurrent = window.pageYOffset;
-            const scrollPercentage = (scrollCurrent / scrollTotal) * 100;
-            scrollProgress.style.width = scrollPercentage + '%';
-        });
-
-        // 滑順滾動動畫
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // 觀察所有section元素
-        document.querySelectorAll('.section, .testimonial').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.6s ease-out';
-            observer.observe(section);
-        });
-
-        // 添加點擊動畫效果
-        document.querySelectorAll('.comparison-card, .testimonial, .section').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // 平滑滾動到頂部功能（雙擊）
-        document.addEventListener('dblclick', function(e) {
-            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    </script>
 </body>
 </html>
